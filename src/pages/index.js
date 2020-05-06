@@ -44,7 +44,7 @@ export default class IndexPage extends React.Component {
         name: 'Fill My Plate',
         tech: ['VanillaJS', 'Webpack | Babel', 'CSS3', 'HTML5'],
         source: 'https://github.com/ykelkar/fill-my-plate',
-        site: 'https://monitormymoney.netlify.app/',
+        site: 'https://fillmyplate.netlify.app/',
         desc: 'Find and record cooking recipes with recipe data pulled from the Forkify API'
       },
       moneyMonitor: {

@@ -1,8 +1,8 @@
-const express = require('express');
+/*const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-//const sendGrid = require('@sendGrid/mail');
+const sendGrid = require('@sendGrid/mail');
 
 
 const app = express();
@@ -57,4 +57,4 @@ app.post('/api/email', (req, res, next) => {
 });
 
 
-app.listen(3030, '0.0.0.0');
+app.listen(3030, '0.0.0.0');*/
