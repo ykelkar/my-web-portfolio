@@ -1,0 +1,25 @@
+.demo-gif {
+    width: 80%;
+    height: 90%;
+    display:block;
+    margin:auto;
+}
+
+.btn-close {
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn-close.focus, .btn-close:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.project-modal {
+    width: 100%;
+    height: 100%;
+}

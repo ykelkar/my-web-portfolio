@@ -1,0 +1,136 @@
+/* THE MAINCONTAINER HOLDS EVERYTHING */
+.project-container{
+    position: relative;
+    width: 360px;
+    height: 400px;
+    background: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 150rem;
+}
+
+/* THE CARD HOLDS THE FRONT AND BACK FACES */
+.project-card{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    box-shadow: 0 0 20px 0px black;
+}
+
+/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
+.project-card:hover {
+    transform: rotateY(180deg);
+}
+
+/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
+.card-front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #05A;
+    color: #000;
+    text-align: center;
+}
+
+/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
+.card-back{
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #fafafa;
+    color: #333;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+.front-title {
+    height: 30%;
+}
+
+.front-content {
+    display: table;
+}
+
+.project-desc {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 12px;
+}
+
+.back-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
+.card-front h3, .card-back h3{
+    font-family: "Merriweather Sans";
+    padding: 30px 30px 15px 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-front p, .card-back p{
+    font-family: "Merriweather Sans";
+    font-weight: normal;
+    font-size: 17px;
+    text-align: start;
+}
+
+.card-back p {
+    text-align: center !important;
+    padding: 10px;
+}
+
+/*starting width/height 100px*/
+.img-project {
+    width: 205px;
+    height: 160px;
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 15px 0 40px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.btn-dummy {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    cursor: default;
+}
+
+.arrow-pointer {
+    color: #05A;
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+}
+
+@keyframes slide1 {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, 0);
+    }
+}

@@ -1,15 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+//import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Scroller from "../components/scroller"
 import PortfolioModal from "../components/portfolio/modal"
 import PortfolioCarousel from "../components/portfolio/carousel"
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Content from '../components/content';
+//import DemoModal from "../components/portfolio/demo";
+import FlipCard from "../components/portfolio/flipcard";
+//import Form from 'react-bootstrap/Form';
+//import Button from 'react-bootstrap/Button';
+//import Content from '../components/content';
 import Axios from 'axios';
 
 export default class IndexPage extends React.Component {
@@ -28,11 +30,38 @@ export default class IndexPage extends React.Component {
     }
     this.handlePortfolioClick = this.handlePortfolioClick.bind(this);
     this.setModal = this.setModal.bind(this);
+    this.project = {
+      employeeBenefits: {
+        index: 1,
+        name: 'Employee Benefits Calculator',
+        tech: ['Angular', 'Angular Material UI', 'Express | NodeJS', 'MongoDB'],
+        source: 'https://github.com/ykelkar/employee-benefits-calculator',
+        site: 'https://benefitscostcalculator.netlify.app/',
+        desc: 'Calculator for the cost of employee benefits which is stored in MongoDB'
+      },
+      fillMyPlate: {
+        index: 2,
+        name: 'Fill My Plate',
+        tech: ['VanillaJS', 'Webpack | Babel', 'CSS3', 'HTML5'],
+        source: 'https://github.com/ykelkar/fill-my-plate',
+        site: 'https://monitormymoney.netlify.app/',
+        desc: 'Find and record cooking recipes with recipe data pulled from the Forkify API'
+      },
+      moneyMonitor: {
+        index: 3,
+        name: 'Money Monitor',
+        tech: ['VanillaJS', 'Webpack | Babel', 'CSS3', 'HTML5'],
+        source: 'https://github.com/ykelkar/money-monitor',
+        site: 'https://monitormymoney.netlify.app/',
+        desc: 'Budget tracker application to keep track of your income and expenses'
+      }
+    }
   }
 
   handlePortfolioClick(index, e) {
     e.preventDefault();
     this.setModal(true, index);
+    console.log(this.props);
   }
 
   setModal(isShown, current) {
@@ -88,8 +117,7 @@ export default class IndexPage extends React.Component {
         });
       });
   }
-
-
+  
   render() {
     return (
       <Layout>
@@ -100,13 +128,16 @@ export default class IndexPage extends React.Component {
               <div className="col-lg-8 text-center">
                 <h2 className="text-white mt-0">About Me</h2>
                 <hr className="divider light my-4"/>
-                <p className="text-white-50 mb-4">I am a ...</p>
+                <p className="text-white-50 mb-4">I am a Front End Software Engineer with Full Stack experience based in Orange County, CA. 
+                I enjoy creating web and mobile applications as well as experiementing with new technologies to advance my skills. 
+                My goal is to always build products that provide users with a satisfying experience.
+                In my free time I like playing sports and catching up on movies and shows.</p>
                 <div className="row">
                   <i className="fab col-md-4 fa-8x fa-js-square mb-4"></i>
                   <i className="fab col-md-4 fa-8x fa-angular mb-4"></i>
                   <i className="fab col-md-4 fa-8x fa-node mb-4"></i>
                 </div>
-                <a className="btn btn-light btn-xl js-scroll-trigger" href="#services" onClick={Scroller.handleAnchorScroll}>Check out my skills!</a>
+                <a className="btn btn-light btn-xl js-scroll-trigger" href="#services" onClick={Scroller.handleAnchorScroll}>See my skills</a>
               </div>
             </div>
           </div>
@@ -155,7 +186,7 @@ export default class IndexPage extends React.Component {
             </div>
           </div>
           <div className="container text-center">
-            <a className="btn btn-primary btn-xl js-scroll-trigger align-self-baseline align-center" href="#portfolio" onClick={Scroller.handleAnchorScroll}>See my projects!</a>
+            <a className="btn btn-primary btn-xl js-scroll-trigger align-self-baseline align-center" href="#portfolio" onClick={Scroller.handleAnchorScroll}>See my projects</a>
           </div>
         </section>
 
@@ -164,17 +195,15 @@ export default class IndexPage extends React.Component {
             <h2 className="text-white text-center mt-0">Projects</h2>
             <hr className="divider light my-4"/>
             <div className="row no-gutters">
-              <div className="col-lg-4 col-sm-6">
+              {/*<div className="col-lg-4 col-sm-6">
                 <div className="project-name text-white text-center">
                   Employee Benefits Calculator
                 </div>
                 <div className="portfolio-box">
                   <Img fluid={this.props.data.images.edges[0].node.childImageSharp.fluid}/>
                   <div className="portfolio-box-caption">
-                    <div className="container text-center">
-                      <p className="btn btn-light js-scroll-trigger align-self-baseline align-center" href="#portfolio" onClick={Scroller.handleAnchorScroll}>Demo</p>
-                    </div>  
-                    <a href="https://github.com/ykelkar/EmployeeBenefitsCalculator" target = "_blank" rel="noopener noreferrer">
+                    <DemoModal project={this.project.employeeBenefits}></DemoModal> 
+                    <a className="btn-project" href="https://github.com/ykelkar/employee-benefits-calculator" target = "_blank" rel="noopener noreferrer">
                       <p className="btn btn-light js-scroll-trigger align-self-baseline align-center">Source Code</p>
                     </a>
                   </div>
@@ -187,10 +216,8 @@ export default class IndexPage extends React.Component {
                 <div className="portfolio-box">
                   <Img fluid={this.props.data.images.edges[1].node.childImageSharp.fluid}/>
                   <div className="portfolio-box-caption">
-                    <div className="container text-center">
-                      <p className="btn btn-light js-scroll-trigger align-self-baseline align-center" href="#portfolio" onClick={Scroller.handleAnchorScroll}>Demo</p>
-                    </div>  
-                    <a href="https://github.com/ykelkar/FillMyPlate" target = "_blank" rel="noopener noreferrer">
+                    <DemoModal project={this.project.fillMyPlate}></DemoModal> 
+                    <a className="btn-project" href="https://github.com/ykelkar/fill-my-plate" target = "_blank" rel="noopener noreferrer">
                       <p className="btn btn-light js-scroll-trigger align-self-baseline align-center">Source Code</p>
                     </a>
                   </div>
@@ -203,33 +230,45 @@ export default class IndexPage extends React.Component {
                 <div className="portfolio-box">
                   <Img fluid={this.props.data.images.edges[2].node.childImageSharp.fluid}/>
                   <div className="portfolio-box-caption">
-                    <div className="container text-center">
-                      <p className="btn btn-light js-scroll-trigger align-self-baseline align-center" href="#portfolio" onClick={Scroller.handleAnchorScroll}>Demo</p>
-                    </div>  
-                    <a href="https://github.com/ykelkar/BudgetApp" target = "_blank" rel="noopener noreferrer">
+                    <DemoModal project={this.project.moneyMonitor}></DemoModal> 
+                    <a className="btn-project" href="https://github.com/ykelkar/money-monitor" target = "_blank" rel="noopener noreferrer">
                       <p className="btn btn-light js-scroll-trigger align-self-baseline align-center">Source Code</p>
                     </a>
                   </div>
                 </div>
+              </div>*/}
+              <div className="col-lg-4 col-sm-6">
+                <FlipCard project={this.project.employeeBenefits}></FlipCard>
+              </div>
+              <div className="col-lg-4 col-sm-6">
+                <FlipCard project={this.project.fillMyPlate}></FlipCard>
+              </div>
+              <div className="col-lg-4 col-sm-6">
+                <FlipCard project={this.project.moneyMonitor}></FlipCard>
               </div>
             </div>
           </div>
           <div className="container text-center">
             <br/>
-            <a className="btn btn-primary btn-xl js-scroll-trigger" href="#contact" onClick={Scroller.handleAnchorScroll}>Get in Touch! </a>
+            <a className="btn btn-light btn-xl js-scroll-trigger" href="#contact" onClick={Scroller.handleAnchorScroll}>Get in Touch </a>
           </div>
         </section>
 
+        
         <section className="page-section" id="contact">
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-lg-8 text-center">
-                <h2 className="mt-0">Let's Get In Touch!</h2>
+                <h2 className="mt-0">Let's Get In Touch</h2>
                 <hr className="divider my-4"/>
-                <p className="text-muted mb-5">I am looking for Front End or Full Stack Software Engineer opportunities. </p>
+                <p className="mb-5">
+                  I am currently looking for Front End or Full Stack Software Engineer opportunities. 
+                  To contact me, please email me at: ykelk002@gmail.com.
+                  </p>
               </div>
             </div>  
-              <Content>
+
+              {/* <Content>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group>
                         <Form.Label htmlFor="full-name">Full Name</Form.Label>
@@ -253,7 +292,8 @@ export default class IndexPage extends React.Component {
                     {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
                     {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
                 </Form>
-            </Content>
+            </Content> */}
+
           </div>
         </section>
         <PortfolioModal show={this.state.modalShow} onHide={() => this.setModal(false, 0)}>

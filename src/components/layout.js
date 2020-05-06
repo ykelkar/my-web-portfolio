@@ -8,6 +8,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Header from "./header"
+import IconButton from '@material-ui/core/IconButton';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import "./layout.scss"
 
 const getScrollNode = (element) => {
@@ -62,12 +65,12 @@ export default class Layout extends React.Component {
         <main>{this.props.children}</main>
         <footer className="bg-light py-5">
           <div className="row justify-content-center">
-            <a href="https://www.linkedin.com/in/yash-kelkar" target = "_blank" rel="noopener noreferrer">
-              <i className="fab fa-linkedin fa-2x mb-3 text-primary icon" />
-            </a>
-            <a href="https://github.com/ykelkar" target = "_blank" rel="noopener noreferrer">
-              <i className="fab fa-github fa-2x mb-3 text-primary icon" />
-            </a>
+            <IconButton className="text-primary btn-media" size="medium" href="https://www.linkedin.com/in/yash-kelkar" target="_blank" rel="noopener noreferrer">
+                <LinkedInIcon fontSize="large"/>
+            </IconButton>
+            <IconButton className="text-primary btn-media" href="https://github.com/ykelkar" target="_blank" rel="noopener noreferrer">
+                <GitHubIcon fontSize="large"/>
+            </IconButton>
           </div>
         </footer>
       </div>

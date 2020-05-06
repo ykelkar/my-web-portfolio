@@ -13,3 +13,8 @@
 @import "../sass/navbar.scss";
 @import "../sass/masthead.scss";
 @import "../sass/portfolio.scss";
+
+.btn-media.focus, .btn-media:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
