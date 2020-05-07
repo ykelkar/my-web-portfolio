@@ -131,7 +131,7 @@ export default class IndexPage extends React.Component {
                 <p className="text-white-50 mb-4">I am a Front End Software Engineer with Full Stack experience based in Orange County, CA. 
                 I enjoy creating web and mobile applications as well as experiementing with new technologies to advance my skills. 
                 My goal is to always build products that provide users with a satisfying experience.
-                In my free time I like playing sports and catching up on movies and shows.</p>
+                In my free time, I like playing sports and catching up on movies and shows.</p>
                 <div className="row">
                   <i className="fab col-md-4 fa-8x fa-js-square mb-4"></i>
                   <i className="fab col-md-4 fa-8x fa-angular mb-4"></i>
