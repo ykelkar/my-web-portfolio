@@ -263,7 +263,7 @@ export default class IndexPage extends React.Component {
                 <hr className="divider my-4"/>
                 <p className="mb-5">
                   I am currently looking for Front End or Full Stack Software Engineer opportunities. 
-                  To contact me, please email me at: ykelk002@gmail.com.
+                  To contact me, please email me at: yashkelkar01@gmail.com.
                   </p>
               </div>
             </div>  
