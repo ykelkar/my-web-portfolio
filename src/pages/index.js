@@ -128,7 +128,7 @@ export default class IndexPage extends React.Component {
               <div className="col-lg-8 text-center">
                 <h2 className="text-white mt-0">About Me</h2>
                 <hr className="divider light my-4"/>
-                <p className="text-white-50 mb-4">I am a Front End Software Engineer with Full Stack experience based in Orange County, CA. 
+                <p className="text-white-50 mb-4">I am a Full Stack Software Engineer based in Los Angeles, CA. 
                 I enjoy creating web and mobile applications as well as experiementing with new technologies to advance my skills. 
                 My goal is to always build products that provide users with a satisfying experience.
                 In my free time, I like playing sports and catching up on movies and shows.</p>
@@ -262,7 +262,7 @@ export default class IndexPage extends React.Component {
                 <h2 className="mt-0">Let's Get In Touch</h2>
                 <hr className="divider my-4"/>
                 <p className="mb-5">
-                  I am currently looking for Front End or Full Stack Software Engineer opportunities. 
+                  I am currently looking for Full Stack Software Engineer opportunities. 
                   To contact me, please email me at: yashkelkar01@gmail.com.
                   </p>
               </div>
