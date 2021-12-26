@@ -5,9 +5,11 @@
 // Set a custom color
 $blue: #05A !default;
 $grey: #555 !default;
+$black: black;
 
 // Set primary color to orange
 $primary: $blue !default;
+$secondary: $black;
 
 // Font overrides
 $font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'Noto Color Emoji' !default;

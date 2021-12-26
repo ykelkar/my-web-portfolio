@@ -42,10 +42,10 @@
 		.navbar-nav {
 			.nav-item {
 				.nav-link {
-					color: fade-out($white, .3);
+					color: $white;
 					padding: 0 1rem;
 					&:hover {
-						color: $white;
+						color: fade-out($white, .3);
 					}
 				}
 				&:last-child {

@@ -10,9 +10,12 @@ import PortfolioCarousel from "../components/portfolio/carousel"
 //import DemoModal from "../components/portfolio/demo";
 import FlipCard from "../components/portfolio/flipcard";
 //import Form from 'react-bootstrap/Form';
-//import Button from 'react-bootstrap/Button';
 //import Content from '../components/content';
+import { Col, Row, Button } from 'react-bootstrap';
 import Axios from 'axios';
+import AppStoreDownload from '../images/portfolio/demos/downloadOn_appStore.png';
+import PlayStoreDownload from '../images/portfolio/demos/downloadOn_playStore.png';
+import './styles.css';
 
 export default class IndexPage extends React.Component {
 
@@ -128,16 +131,19 @@ export default class IndexPage extends React.Component {
               <div className="col-lg-8 text-center">
                 <h2 className="text-white mt-0">About Me</h2>
                 <hr className="divider light my-4"/>
-                <p className="text-white-50 mb-4">I am a Full Stack Software Engineer based in Los Angeles, CA. 
+                <p className="text-white mb-4">I am a Full Stack Software Engineer based in Los Angeles, CA. 
                 I enjoy creating web and mobile applications as well as experiementing with new technologies to advance my skills. 
                 My goal is to always build products that provide users with a satisfying experience.
-                In my free time, I like playing sports and catching up on movies and shows.</p>
+                I currently work in the EdTech space working on the web and mobile application Spatial Vis.</p>
                 <div className="row">
                   <i className="fab col-md-4 fa-8x fa-js-square mb-4"></i>
+                  <i className="fab col-md-4 fa-8x fa-react mb-4"></i>
                   <i className="fab col-md-4 fa-8x fa-angular mb-4"></i>
                   <i className="fab col-md-4 fa-8x fa-node mb-4"></i>
+                  <i className="fab col-md-4 fa-8x fa-apple mb-4"></i>
+                  <i className="fab col-md-4 fa-8x fa-android mb-4"></i>
                 </div>
-                <a className="btn btn-light btn-xl js-scroll-trigger" href="#services" onClick={Scroller.handleAnchorScroll}>See my skills</a>
+                <a className="btn btn-light btn-xl js-scroll-trigger" href="#services" onClick={Scroller.handleAnchorScroll}>My skills</a>
               </div>
             </div>
           </div>
@@ -147,96 +153,124 @@ export default class IndexPage extends React.Component {
           <div className="container">
             <h2 className="text-center mt-0">Skills</h2>
             <hr className="divider my-4"/>
-            <div className="row">
-              <div className="col-lg-3 col-md-6 text-center">
-                <div className="mt-5">
-                  <i className="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+            <Row style={{ textAlign: 'center', marginBottom: '25px' }}>
+              <Col><i className="fas fa-4x fa-laptop-code text-primary mb-4"></i>
                   <h3 className="h4 mb-2">Front End</h3>
-                  <p className="text-muted mb-0">Angular 2+</p>
+                  <p className="text-muted mb-0">React.js</p>
+                  <p className="text-muted mb-0">Angular/AngularJS</p>
                   <p className="text-muted mb-0">JavaScript</p>
-                  <p className="text-muted mb-0">TypeScript</p>
-                  <p className="text-muted mb-0">HTML5</p>
-                  <p className="text-muted mb-0">CSS3 | SASS</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 text-center">
-                <div className="mt-5">
-                  <i className="fas fa-4x fa-server text-primary mb-4"></i>
+                  <p className="text-muted mb-0">TypeScript</p></Col>
+              <Col><i className="fas fa-4x fa-server text-primary mb-4"></i>
                   <h3 className="h4 mb-2">Back End</h3>
-                  <p className="text-muted mb-0">NodeJS</p>
-                  <p className="text-muted mb-0">Express</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 text-center">
-                <div className="mt-5">
-                  <i className="fas fa-4x fa-database text-primary mb-4"></i>
-                  <h3 className="h4 mb-2">Databases</h3>
+                  <p className="text-muted mb-0">Node.js</p>
+                  <p className="text-muted mb-0">Go</p>
+                  <p className="text-muted mb-0">Express</p></Col>
+              <Col><i className="fas fa-4x fa-mobile-alt text-primary mb-4"></i>
+                  <h3 className="h4 mb-2">Mobile</h3>
+                  <p className="text-muted mb-0">Swift</p>
+                  <p className="text-muted mb-0">Kotlin</p>
+                  <p className="text-muted mb-0">Xamarin.Forms</p>
+                  <p className="text-muted mb-0">React Native</p></Col>
+            </Row>
+            <Row style={{ textAlign: 'center' }}>
+              <Col><i className="fas fa-4x fa-database text-primary mb-4"></i>
+                  <h3 className="h4 mb-2">Database</h3>
+                  <p className="text-muted mb-0">PostgreSQL</p>
+                  <p className="text-muted mb-0">SQL</p>
                   <p className="text-muted mb-0">Microsoft SQL Server</p>
-                  <p className="text-muted mb-0">MongoDB</p>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 text-center">
-                <div className="mt-5">
-                  <i className="fas fa-4x fa-cloud text-primary mb-4"></i>
-                  <h3 className="h4 mb-2">Deployment</h3>
+                  <p className="text-muted mb-0">MongoDB</p></Col>
+              <Col><i className="fas fa-4x fa-cloud text-primary mb-4"></i>
+                  <h3 className="h4 mb-2">Cloud</h3>
+                  <p className="text-muted mb-0">AWS (S3, Elastic Beanstalk, CloudFront)</p>
+                  <p className="text-muted mb-0">Microsoft Azure</p></Col>
+              <Col><i className="fas fa-4x fa-terminal text-primary mb-4"></i>
+                  <h3 className="h4 mb-2">CI/CD</h3>
                   <p className="text-muted mb-0">Git</p>
-                  <p className="text-muted mb-0">Team Foundation Server (TFS)</p>
+                  <p className="text-muted mb-0">Azure DevOps Server</p></Col>
+            </Row>
+          </div>
+          <div className="container text-center mt-4">
+            <a className="btn btn-primary btn-xl js-scroll-trigger align-self-baseline align-center" href="#experience" onClick={Scroller.handleAnchorScroll}>My Professional Projects</a>
+          </div>
+        </section>
+
+        <section className="page-section bg-primary" id="experience">
+          <div className="container" style={{ textAlign: 'center' }}>
+            <Row>
+              <Col>
+                <h2 className="text-white mt-0" style={{ textAlign: 'center' }}>Professional Projects</h2>
+                <hr className="divider light my-4"/>
+              </Col>
+            </Row>
+            <Row style={{ placeContent: 'start', marginBottom: '30px' }}>
+              <div>
+                <div style={{ display: 'flex', placeContent: 'start' }}>
+                  <h4 className="text-white">Spatial Vis (React.js, Swift, Kotlin, Go)</h4>
+                </div>
+                <div style={{ textAlign: 'start' }}>
+                  <h5 className="text-white">is a 2D and 3D sketching app with a grading algorithm that gives helpful feedback.</h5>
+                  <li className="text-white">Lead engineer for Spatial Vis across all three platforms (Web, iOS & Android) using React, Swift, and Kotlin.</li>
+                  <div style={{ display: 'inline' }}>
+                    <Button style={{ backgroundColor: 'hsl(103, 79%, 47%)', marginLeft: '15px' }} className="web-app-button" onClick={() => { window.open('https://spatialvis.egrove.education/', '_blank', 'noopener noreferrer'); }}>
+                      Spatial Vis Web
+                    </Button>
+                    <Button className="mobile-app-link" onClick={() => { window.open('https://apps.apple.com/us/app/spatial-vis/id1495249170', '_blank', 'noopener noreferrer'); }}>
+                      <img src={AppStoreDownload} width="312" height="102" alt="AppStore" />
+                    </Button>
+                    <Button className="mobile-app-link" onClick={() => { window.open('https://play.google.com/store/apps/details?hl=en_US&id=education.egrove.spatialvis', '_blank', 'noopener noreferrer'); }}>
+                      <img src={PlayStoreDownload} width="312" height="102" alt="PlayStore" />
+                    </Button>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Row>
+            <Row style={{ placeContent: 'start', marginBottom: '30px' }}>
+              <div>
+                <div style={{ display: 'flex', placeContent: 'start' }}>
+                  <h4 className="text-white">Wordable (Xamarin.Forms)</h4>
+                </div>
+                <div style={{ textAlign: 'start' }}>
+                  <h5 className="text-white">connects via Bluetooth to a wearable device to collect, store and visualize user data.</h5>
+                  <li className="text-white">Leading development of the cross-platform (iOS & Android) mobile application using Xamarin.Forms with C#.</li>
+                  <div style={{ display: 'inline' }}>
+                    <Button className="mobile-app-link" disabled onClick={() => { window.open('https://apps.apple.com/us/app/spatial-vis/id1495249170', '_blank', 'noopener noreferrer'); }}>
+                      <img src={AppStoreDownload} width="312" height="102" alt="AppStore" />
+                    </Button>
+                    <Button className="mobile-app-link" disabled onClick={() => { window.open('https://play.google.com/store/apps/details?hl=en_US&id=education.egrove.spatialvis', '_blank', 'noopener noreferrer'); }}>
+                      <img src={PlayStoreDownload} width="312" height="102" alt="PlayStore" />
+                    </Button>
+                    <div style={{ marginLeft: '15px' }}>Currently offline</div>
+                  </div>
+                </div>
+              </div>
+            </Row>
+            <Row style={{ placeContent: 'start', marginBottom: '30px' }}>
+              <div>
+                <div style={{ display: 'flex', placeContent: 'start' }}>
+                  <h4 className="text-white">AVEVA Insight (Angular, .NET Core, Microsoft SQL Server)</h4>
+                </div>
+                <div style={{ textAlign: 'start' }}>
+                  <h5 className="text-white">is a secure, managed software-as-a-service (SaaS) solution for collecting, storing, and visualizing industrial data for faster, smarter business decisions.</h5>
+                  <li className="text-white">Designed, developed, and maintained the company’s cross-browser, cross-platform, and cloud-based website.</li>
+                  <div style={{ display: 'inline' }}>
+                    <Button style={{ backgroundColor: '#4d5ee0', marginTop: '15px', marginLeft: '15px' }} className="web-app-button" onClick={() => { window.open('https://online.wonderware.com/', '_blank', 'noopener noreferrer'); }}>
+                      AVEVA Insight
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </Row>
           </div>
-          <div className="container text-center">
-            <a className="btn btn-primary btn-xl js-scroll-trigger align-self-baseline align-center" href="#portfolio" onClick={Scroller.handleAnchorScroll}>See my projects</a>
+          <div className="container text-center mt-4">
+            <a className="btn btn-light btn-xl js-scroll-trigger" href="#portfolio" onClick={Scroller.handleAnchorScroll}>My Side Projects</a>
           </div>
         </section>
 
         <section className="page-section bg-dark" id="portfolio">
           <div className="container-fluid p-0">
-            <h2 className="text-white text-center mt-0">Projects</h2>
+            <h2 className="text-white text-center mt-0">Side Projects</h2>
             <hr className="divider light my-4"/>
             <div className="row no-gutters">
-              {/*<div className="col-lg-4 col-sm-6">
-                <div className="project-name text-white text-center">
-                  Employee Benefits Calculator
-                </div>
-                <div className="portfolio-box">
-                  <Img fluid={this.props.data.images.edges[0].node.childImageSharp.fluid}/>
-                  <div className="portfolio-box-caption">
-                    <DemoModal project={this.project.employeeBenefits}></DemoModal> 
-                    <a className="btn-project" href="https://github.com/ykelkar/employee-benefits-calculator" target = "_blank" rel="noopener noreferrer">
-                      <p className="btn btn-light js-scroll-trigger align-self-baseline align-center">Source Code</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-sm-6">
-                <div className="project-name text-white text-center">
-                  Fill My Plate
-                </div>
-                <div className="portfolio-box">
-                  <Img fluid={this.props.data.images.edges[1].node.childImageSharp.fluid}/>
-                  <div className="portfolio-box-caption">
-                    <DemoModal project={this.project.fillMyPlate}></DemoModal> 
-                    <a className="btn-project" href="https://github.com/ykelkar/fill-my-plate" target = "_blank" rel="noopener noreferrer">
-                      <p className="btn btn-light js-scroll-trigger align-self-baseline align-center">Source Code</p>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-sm-6">
-                <div className="project-name text-white text-center">
-                  Budget Application
-                </div>
-                <div className="portfolio-box">
-                  <Img fluid={this.props.data.images.edges[2].node.childImageSharp.fluid}/>
-                  <div className="portfolio-box-caption">
-                    <DemoModal project={this.project.moneyMonitor}></DemoModal> 
-                    <a className="btn-project" href="https://github.com/ykelkar/money-monitor" target = "_blank" rel="noopener noreferrer">
-                      <p className="btn btn-light js-scroll-trigger align-self-baseline align-center">Source Code</p>
-                    </a>
-                  </div>
-                </div>
-              </div>*/}
               <div className="col-lg-4 col-sm-6">
                 <FlipCard project={this.project.employeeBenefits}></FlipCard>
               </div>
@@ -250,7 +284,7 @@ export default class IndexPage extends React.Component {
           </div>
           <div className="container text-center">
             <br/>
-            <a className="btn btn-light btn-xl js-scroll-trigger" href="#contact" onClick={Scroller.handleAnchorScroll}>Get in Touch </a>
+            <a className="btn btn-light btn-xl js-scroll-trigger" href="#contact" onClick={Scroller.handleAnchorScroll}>Contact Me</a>
           </div>
         </section>
 

@@ -31,16 +31,16 @@ const FlipCard = (project) => {
             <div className="project-card">
                 <div className="card-front">
                     <div className="front-title">
-                        <h3>{project.project.name}</h3> 
+                        <h4>{project.project.name}</h4> 
                     </div>
                     <div className="row front-content">
                         <img className="img-project" src={getProjectImg(project.project.index)} alt="loading..."    ></img>
                         <div className="project-desc">{technologies}</div>
                     </div>
-                    <a disabled className="btn btn-light btn-dummy">
+                    <div disabled className="btn btn-light btn-dummy">
                         Watch Demo
                         <i class="fas fa-long-arrow-alt-right arrow-pointer" aria-hidden="true"></i>
-                    </a>
+                    </div>
                 </div>
                 <div className="card-back">
                     <div className="back-content">

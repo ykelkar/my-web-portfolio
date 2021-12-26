@@ -3,6 +3,7 @@ import Scrollspy from "react-scrollspy"
 import { Navbar, Nav } from "react-bootstrap"
 import Scroller from './scroller'
 import Pdf from "../Yash-Kelkar-Resume.pdf";
+import profilePicture from '../images/portfolio/profile/yash.jpg';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -33,7 +34,10 @@ export default class Header extends React.Component {
                     <Nav.Link className={"js-scroll-trigger"} href="#services" onClick={Scroller.handleAnchorScroll}>Skills</Nav.Link>
                   </li>
                   <li className="nav-item">
-                    <Nav.Link className={"js-scroll-trigger"} href="#portfolio" onClick={Scroller.handleAnchorScroll}>Projects</Nav.Link>
+                    <Nav.Link className={"js-scroll-trigger"} href="#experience" onClick={Scroller.handleAnchorScroll}>Professional Projects</Nav.Link>
+                  </li>
+                  <li className="nav-item">
+                    <Nav.Link className={"js-scroll-trigger"} href="#portfolio" onClick={Scroller.handleAnchorScroll}>Side Projects</Nav.Link>
                   </li>
                   <li className="nav-item">
                     <Nav.Link className={"js-scroll-trigger"} href="#contact" onClick={Scroller.handleAnchorScroll}>Contact</Nav.Link>
@@ -49,10 +53,11 @@ export default class Header extends React.Component {
               <div className="col-lg-10 align-self-end">
                 <h1 className="text-uppercase text-white font-weight-bold">Yash Kelkar</h1>
                 <hr className="divider my-4"/>
+                <img className="img-profile" src={profilePicture} alt="loading..." style={{ height: '311px', width: '345px', marginBottom: '20px' }}></img>
               </div>
               <div className="col-lg-8 align-self-baseline">
-                <p className="text-white-75 font-weight-light mb-5">Software Engineer</p>
-                <a className="btn btn-primary btn-xl js-scroll-trigger" href="#about" onClick={Scroller.handleAnchorScroll}>Learn more</a>
+                <h4 className="text-white font-weight-light mb-5">Full Stack Software Engineer</h4>
+                <a className="btn btn-primary btn-xl js-scroll-trigger" href="#about" onClick={Scroller.handleAnchorScroll}>About Me</a>
               </div>
             </div>
           </div>

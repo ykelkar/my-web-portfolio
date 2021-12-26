@@ -1,0 +1,26 @@
+.mobile-app-link {
+  background-color: transparent;
+  border: none;
+  margin: 5px 0px 5px 0px;
+}
+
+.mobile-app-link:focus,.mobile-app-link:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.mobile-app-link:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.web-app-button {
+  background-color: hsl(103, 79%, 47%);
+  border: 2px solid lightgrey;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .4);
+  font-weight: bold;
+  height: 102px;
+  width: 312px;
+  margin-right: 15px;
+}
